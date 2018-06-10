@@ -4,6 +4,8 @@ const api = require("../src/main");
 const path = require("path");
 const rp = require("request-promise");
 
+const { readFilePromise } = require("@keymux/promisrfs");
+
 const command = process.argv[2];
 
 const uri = [
