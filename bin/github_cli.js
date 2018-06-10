@@ -22,9 +22,9 @@ const bodyFile = path.resolve(process.env.BODY_FILE);
 
 const main = () =>
   readFilePromise(bodyFile)
-    .then(body => {
-      body: body.toString();
-    })
+    .then(body => ({
+      body: body.toString(),
+    }))
     .then(body =>
       api[command](uri, body, apiKey)
         .then(console.log)
