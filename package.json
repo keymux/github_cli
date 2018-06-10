@@ -1,5 +1,5 @@
 {
-  "name": "github_cli",
+  "name": "@keymux/github_cli",
   "version": "0.1.0",
   "description": "A command line wrapper around the github api",
   "main": "index.js",
