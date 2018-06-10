@@ -10,7 +10,7 @@ const uri = [
   "https://api.github.com/repos/",
   process.env.ghprbGhRepository,
   "/issues/",
-  ghprbPullId,
+  process.env.ghprbPullId,
   "comments",
 ].join("");
 
