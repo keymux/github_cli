@@ -21,12 +21,16 @@ const apiKey = process.env.GITHUB_ACCESS_TOKEN;
 const bodyFile = path.resolve(process.env.BODY_FILE);
 
 const main = () =>
-  readFilePromise(bodyFile).then(body =>
-    api[command](uri, { body }, apiKey)
-      .then(console.log)
-      .then(() => process.exit(0))
-      .catch(console.error)
-      .then(() => process.exit(-1))
-  );
+  readFilePromise(bodyFile)
+    .then(body => {
+      body: body.toString();
+    })
+    .then(body =>
+      api[command](uri, body, apiKey)
+        .then(console.log)
+        .then(() => process.exit(0))
+        .catch(console.error)
+        .then(() => process.exit(-1))
+    );
 
 return main();
