@@ -13,7 +13,7 @@ const uri = [
   process.env.ghprbGhRepository,
   "/issues/",
   process.env.ghprbPullId,
-  "comments",
+  "/comments",
 ].join("");
 
 const apiKey = process.env.GITHUB_ACCESS_TOKEN;
