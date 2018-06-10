@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const api = require("../src/main");
+const path = require("path");
 const rp = require("request-promise");
 
 const command = process.argv[2];
@@ -14,6 +15,8 @@ const uri = [
 ].join("");
 
 const apiKey = process.env.GITHUB_ACCESS_TOKEN;
+
+const bodyFile = path.resolve(process.env.BODY_FILE);
 
 const main = () =>
   readFilePromise(bodyFile).then(body =>
