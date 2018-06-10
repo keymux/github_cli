@@ -13,20 +13,15 @@ const uri = [
   "comments",
 ].join("");
 
-const body = {
-  body: "test",
-};
-
 const apiKey = process.env.GITHUB_ACCESS_TOKEN;
 
-console.log(uri);
-console.log(api[command].toString());
-
 const main = () =>
-  api[command](uri, body, apiKey)
-    .then(console.log)
-    .then(() => process.exit(0))
-    .catch(console.error)
-    .then(() => process.exit(-1));
+  readFilePromise(bodyFile).then(body =>
+    api[command](uri, { body }, apiKey)
+      .then(console.log)
+      .then(() => process.exit(0))
+      .catch(console.error)
+      .then(() => process.exit(-1))
+  );
 
 return main();

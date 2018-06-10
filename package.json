@@ -1,8 +1,11 @@
 {
   "name": "@keymux/github_cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A command line wrapper around the github api",
   "main": "index.js",
+  "bin": {
+    "github_cli": "bin/github_cli.js"
+  },
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.1.2",
@@ -12,6 +15,7 @@
     "sinon": "^5.1.1"
   },
   "dependencies": {
+    "@keymux/promisrfs": "^0.1.1",
     "minimist": "^1.2.0",
     "request": "^2.87.0",
     "request-promise": "^4.2.2"
